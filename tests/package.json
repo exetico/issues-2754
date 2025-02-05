@@ -1,0 +1,29 @@
+{
+  "name": "issues-2754",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": ". ./set_test_envs.sh; cd ./emulators && firebase emulators:exec --only auth,functions,firestore,hosting,pubsub,tasks 'npm run __jest' --project demo-issues-2754",
+    "test:setup": "npm ci && cd ../functions && npm ci",
+    "test:watch-all": ". ./set_test_envs.sh; cd ./emulators && firebase emulators:exec --only auth,functions,firestore,hosting,pubsub,tasks 'npm run __jest:watch-all' --project demo-issues-2754 --ui",
+    "__jest": "node --max_old_space_size=4096 --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --verbose --ci --reporters=default --reporters=jest-junit",
+    "__jest:watch-all": "node --max_old_space_size=4096 --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --verbose --watchAll"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "firebase-admin": "^13.0.2",
+    "firebase-functions": "^6.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.4.0",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0"
+  }
+}

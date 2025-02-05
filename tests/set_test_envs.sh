@@ -1,0 +1,1 @@
+export AUTOMATED_TEST="true"

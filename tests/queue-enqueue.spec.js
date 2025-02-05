@@ -87,6 +87,7 @@ describe('Task Queue', () => {
             return console.log(`[${scope}] Task was dispatched`);
         } catch (error) {
             console.error(`[${scope}] Error: ${error}`);
+            throw error;
         }
     });
 });

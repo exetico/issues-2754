@@ -17,3 +17,5 @@ Then, run the test:
 ```bash
 npm run test
 ```
+
+Please take a look at the [/actions](/actions) page, for the latest GitHub Actions workflow.

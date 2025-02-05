@@ -18,4 +18,4 @@ Then, run the test:
 npm run test
 ```
 
-Please take a look at the [/actions](/actions) page, for the latest GitHub Actions workflow.
+Please take a look at the "Actions" tab in the repository to check the test status.

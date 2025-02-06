@@ -35,11 +35,12 @@ describe('Task Queue', () => {
         try {
             // Remove the task_dispatched.txt file
             const path = '/tmp/task_dispatched.txt';
-            try {
-                await
-                fs.unlinkSync(path);
-            } catch (error) {
-                console.log(`[${scope}] Error: ${error}`);
+            if (fs.existsSync(path)) {
+                try {
+                    fs.unlinkSync(path);
+                } catch (error) {
+                    console.log(`[${scope}] Error: ${error}`);
+                }
             }
 
             const function_name = 'taskTestJobDispatcher'
